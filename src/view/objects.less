@@ -1,0 +1,184 @@
+#Globals() {
+	.OBJ_TimesBar() {
+		//main
+		@VAR_timesBarOffset: 77px;
+		@VAR_topOffset: 15px;
+	}
+	
+	.OBJ_Canvas() {
+		@VAR_paddingLR: 10px;
+		@VAR_canvasBorder: 1px;
+		@VAR_canvasWidth: 620px - (2 * @VAR_paddingLR) - (2 * @VAR_canvasBorder) + 1.5px; //rounding trick
+		@VAR_canvasHeight: 720px;
+	}
+	
+	.OBJ_Event() {
+		//event main
+		@VAR_eventBorderWidth: 1px;
+		@VAR_eventLeftBorderWidth: 4px;
+		@VAR_eventWidth: 100% - (2 * @VAR_eventBorderWidth) + .5px; //trick for rounding px
+		@VAR_eventHeight: 100% - (2 * @VAR_eventBorderWidth);
+		
+		//title
+		
+		//location
+
+	}
+	
+	.pseudoPadding(@top, @left) {
+			top: @top;
+			left: @left;
+	}
+	
+	.font() {
+		@VAR_font: "Lucida Grande", Tahome, Verdana, Ariel, sans-serif;
+	}
+}
+
+#Times_bar {
+	.construct() {
+		//import globals
+		#Globals > .OBJ_TimesBar();
+		#Globals > .OBJ_Canvas();
+		//pos
+		position: absolute;
+		width: @VAR_timesBarOffset - @VAR_paddingLR; //this is the only funky thing.
+		top: @VAR_topOffset;
+		//style
+		text-align: right;
+		background-color: white;
+	}
+	
+	.main_hour() {
+		//import globals
+		#Globals > .font();
+		//pos
+		display: inline;
+		line-height: 29px;
+		padding-right: 6px;
+		//style
+		color: rgb(104, 104, 104);
+		font-size: .75em;
+		font-family: @VAR_font;
+		font-weight: bold;
+	}
+	
+	.am_pm() {
+		//import globals
+		#Globals > .font();
+		//pos
+		display: inline;
+		line-height: 30px;
+		//style
+		color: rgb(166, 166, 166);
+		font-size: .5em;
+		font-family: @VAR_font;
+	}
+	
+	.half_hour() {
+		//import globals
+		#Globals > .font();
+		//pos
+		line-height: 29px;
+		//style
+		color: rgb(166, 166, 166);
+		font-size: .5em;
+		font-family: @VAR_font;
+	}
+}
+
+#Canvas {
+	.construct() {
+		//import globals
+		#Globals > .OBJ_Canvas();
+		#Globals > .OBJ_TimesBar();
+		
+		//pos
+		position: absolute;
+		left: @VAR_timesBarOffset - 1px;
+		top: @VAR_topOffset + 15px;
+		width: @VAR_canvasWidth;
+		height: @VAR_canvasHeight;
+		padding-left: @VAR_paddingLR;
+		padding-right: @VAR_paddingLR;
+		
+		//style
+		border-left:@VAR_canvasBorder solid rgb(212,212,212);
+		background-color: rgb(236, 236, 236);
+	}
+	
+	.canvas_wrap() {
+		position: relative;
+		width: 100%;
+		height:100% + 1px;
+	}
+}
+
+#Event {
+	.construct() {
+		position: absolute;
+		overflow: hidden;
+                
+                &:hover {
+                    z-index: 2;
+                    min-width: 100px;
+                    min-height: 50px;
+                }
+	}
+	
+	.event_wrap() {
+		#Globals > .OBJ_Event();
+		//pos
+		position: absolute;
+		width: @VAR_eventWidth;
+		height:@VAR_eventHeight;
+		overflow:hidden;
+		
+		//style
+		background-color: white;
+		border: @VAR_eventBorderWidth solid rgb(212,212,212);
+		border-left: @VAR_eventLeftBorderWidth solid rgb(72, 111, 164);
+		
+		&:hover {
+                    z-index: 2;
+                    min-width: 100px;
+                    min-height: 50px;
+                }
+	}
+	
+	.title() {
+		#Globals > .font();
+		//pos
+		position: relative;
+		
+		//style
+		color: rgb(72, 111, 164);
+		font-family: @VAR_font;
+		font-size: .75em;
+		line-height: 1.5em;
+                font-weight:bold;
+		
+		#Globals > .pseudoPadding(5px, 7px); //fake padding: (top, left)
+	}
+	
+	.location() {
+		#Globals > .font();
+		//pos
+		position: relative;
+		
+		//style
+		color: rgb(105, 105, 105);
+		font-family: @VAR_font;
+		font-size: .5em;
+		
+		#Globals > .pseudoPadding(4px, 8px); //fake padding: (top, left)
+	}
+}
+
+#Calendar {
+	.construct() {
+		position: relative;
+		width:100%;
+		height: 100$;
+	}
+}

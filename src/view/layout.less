@@ -1,0 +1,105 @@
+@import "objects.less";
+
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+//End of reset
+
+
+html {
+	body {
+		#calendar {
+			#Calendar > .construct();
+			
+			#times_bar {
+				#Times_bar > .construct();
+				
+				.main_hour {
+					#Times_bar > .main_hour();
+				}
+				
+				.half_hour {
+					#Times_bar > .half_hour();
+				}
+				
+				.am_pm {
+					#Times_bar > .am_pm();
+				}
+			}//end of times_bar
+		
+			#canvas {
+				#Canvas > .construct();
+				
+				#canvas_wrap {
+					#Canvas > .canvas_wrap();
+				
+					.event {
+						#Event > .construct();
+						
+						.event_wrap {
+							#Event > .event_wrap();
+						
+							.id {
+								display: none;
+							}
+							
+							.title {
+								#Event > .title();
+							}
+							
+							.location {
+								#Event > .location();
+							}	
+						}//end of event wrap
+					}//end of event
+				}//end of event_area
+			}//end of canvas
+		}//end of calendar
+	}//end of body
+}//end of html

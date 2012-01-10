@@ -1,0 +1,221 @@
+/* CSS RESET */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html body #calendar {
+  position: relative;
+  width: 100%;
+  height: 100$;
+}
+html body #calendar #times_bar {
+  position: absolute;
+  width: 67px;
+  top: 15px;
+  text-align: right;
+  background-color: white;
+}
+html body #calendar #times_bar .main_hour {
+  display: inline;
+  line-height: 29px;
+  padding-right: 6px;
+  color: #686868;
+  font-size: .75em;
+  font-family: "Lucida Grande", Tahome, Verdana, Ariel, sans-serif;
+  font-weight: bold;
+}
+html body #calendar #times_bar .half_hour {
+  line-height: 29px;
+  color: #a6a6a6;
+  font-size: .5em;
+  font-family: "Lucida Grande", Tahome, Verdana, Ariel, sans-serif;
+}
+html body #calendar #times_bar .am_pm {
+  display: inline;
+  line-height: 30px;
+  color: #a6a6a6;
+  font-size: .5em;
+  font-family: "Lucida Grande", Tahome, Verdana, Ariel, sans-serif;
+}
+html body #calendar #canvas {
+  position: absolute;
+  left: 76px;
+  top: 30px;
+  width: 599.5px;
+  height: 720px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid #d4d4d4;
+  background-color: #ececec;
+}
+html body #calendar #canvas #canvas_wrap {
+  position: relative;
+  width: 100%;
+  height: 101%;
+}
+html body #calendar #canvas #canvas_wrap .event {
+  position: absolute;
+  overflow: hidden;
+}
+html body #calendar #canvas #canvas_wrap .event:hover {
+  z-index: 2;
+  min-width: 100px;
+  min-height: 50px;
+}
+html body #calendar #canvas #canvas_wrap .event .event_wrap {
+  position: absolute;
+  width: 98.5%;
+  height: 98%;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid #d4d4d4;
+  border-left: 4px solid #486fa4;
+}
+html body #calendar #canvas #canvas_wrap .event .event_wrap:hover {
+  z-index: 2;
+  min-width: 100px;
+  min-height: 50px;
+}
+html body #calendar #canvas #canvas_wrap .event .event_wrap .id {
+  display: none;
+}
+html body #calendar #canvas #canvas_wrap .event .event_wrap .title {
+  position: relative;
+  color: #486fa4;
+  font-family: "Lucida Grande", Tahome, Verdana, Ariel, sans-serif;
+  font-size: .75em;
+  line-height: 1.5em;
+  font-weight: bold;
+  top: 5px;
+  left: 7px;
+}
+html body #calendar #canvas #canvas_wrap .event .event_wrap .location {
+  position: relative;
+  color: #696969;
+  font-family: "Lucida Grande", Tahome, Verdana, Ariel, sans-serif;
+  font-size: .5em;
+  top: 4px;
+  left: 8px;
+}
